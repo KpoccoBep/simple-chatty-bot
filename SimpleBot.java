@@ -27,7 +27,7 @@ public class SimpleBot {
 
     static void guessAge() {
         System.out.println("Let me guess your age.");
-        System.out.println("Say me remainders of dividing your age by 3, 5 and 7.");
+        System.out.println("Enter remainders of dividing your age by 3, 5 and 7.");
         int rem3 = scanner.nextInt();
         int rem5 = scanner.nextInt();
         int rem7 = scanner.nextInt();
@@ -50,11 +50,15 @@ public class SimpleBot {
         System.out.println("2. To decompose a program into several small subroutines.");
         System.out.println("3. To determine the execution time of a program.");
         System.out.println("4. To interrupt the execution of a program.");
-        int answer = scanner.nextInt();
-        while (answer != 2) {
-            System.out.println("Please, try again.");
-            answer = scanner.nextInt();
+        boolean correct = false;
+        while (!correct) {
+            int answer = scanner.nextInt();
+            correct = answer == 2;
+            if (!correct) {
+                System.out.println("Please, try again.");
+            }
         }
+        System.out.println("Congratulation, have a nice day!");
     }
 
     static void end() {
